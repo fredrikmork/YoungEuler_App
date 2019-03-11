@@ -3,4 +3,6 @@
     <string name="logoTxt">Young Euler</string>
     <string name="startButton">Start Quiz</string>
     <string name="hjelpButton">Hjelp</string>
+    <string name="nyttSpm">Nytt Spørsmål</string>
+    <string name="menyButton">Meny</string>
 </resources>
