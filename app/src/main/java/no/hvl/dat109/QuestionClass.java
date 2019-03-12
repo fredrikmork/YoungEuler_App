@@ -11,7 +11,7 @@ public class QuestionClass extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.question);
 
         Button menyBtn = findViewById(R.id.menyButton);
         menyBtn.setOnClickListener(new View.OnClickListener() {
