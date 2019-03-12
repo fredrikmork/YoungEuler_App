@@ -15,6 +15,7 @@
         android:text="@string/hjelpTxt"
         android:textColor="@android:color/white"
         android:textSize="30sp"
+        app:fontFamily="casual"
         tools:layout_editor_absoluteX="50dp"
         tools:layout_editor_absoluteY="83dp" />
 

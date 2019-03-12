@@ -7,4 +7,7 @@
     <string name="menyButton">Meny</string>
     <string name="cameraButton">Kamera</string>
     <string name="hjelpTxt">Når man starter quizen dukker det opp et spørsmål du skal løse ved å plassere klossene riktig i forhold til hverandre. <br>Regler:</br> </string>
+    <string name="questionTxt">*Henter fra DB senere*</string>
+    <string name="tilbakeTxt">Ditt spørsmål var: *Henter fra databasen*</string>
+    <bool name="riktigGalt">false</bool>
 </resources>
