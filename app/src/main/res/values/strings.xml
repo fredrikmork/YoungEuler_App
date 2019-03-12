@@ -6,5 +6,5 @@
     <string name="nyttSpm">Nytt Spørsmål</string>
     <string name="menyButton">Meny</string>
     <string name="cameraButton">Kamera</string>
-
+    <string name="hjelpTxt">Når man starter quizen dukker det opp et spørsmål du skal løse ved å plassere klossene riktig i forhold til hverandre. <br>Regler:</br> </string>
 </resources>
