@@ -14,7 +14,7 @@
         android:text="@string/logoTxt"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
-        android:textSize="30sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:fontFamily="casual"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,19 +25,23 @@
 
     <Button
         android:id="@+id/startButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="154dp"
-        android:layout_marginLeft="154dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="155dp"
-        android:layout_marginRight="155dp"
-        android:layout_marginBottom="35dp"
+        android:layout_width="207dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@null"
+        android:textSize="30dp"
+        android:textColor="@android:color/white"
         android:text="@string/startButton"
-        app:layout_constraintBottom_toTopOf="@+id/helpButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoTxt" />
+        app:layout_constraintTop_toBottomOf="@+id/logoTxt"
+        app:layout_constraintVertical_bias="0.125" />
 
     <Button
         android:id="@+id/helpButton"
@@ -48,10 +52,11 @@
         android:layout_marginTop="35dp"
         android:layout_marginEnd="163dp"
         android:layout_marginRight="163dp"
-        android:layout_marginBottom="292dp"
+        android:layout_marginBottom="32dp"
         android:text="@string/helpButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/startButton" />
 
