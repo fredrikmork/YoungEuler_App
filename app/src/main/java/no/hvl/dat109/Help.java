@@ -21,7 +21,7 @@ public class Help extends AppCompatActivity {
             }
         });
 
-        Button newQstBtn = findViewById(R.id.nyttSpm);
+        Button newQstBtn = findViewById(R.id.startButton);
         newQstBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -5,11 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bakgrunnsbilde">
+    android:background="@drawable/background">
 
 
     <TextView
-        android:id="@+id/hjelpTxt"
+        android:id="@+id/helpTxt"
         android:layout_width="328dp"
         android:layout_height="515dp"
         android:layout_marginStart="50dp"
@@ -18,7 +18,7 @@
         android:layout_marginEnd="33dp"
         android:layout_marginRight="33dp"
         android:layout_marginBottom="44dp"
-        android:text="@string/hjelpTxt"
+        android:text="@string/helpTxt"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         app:fontFamily="casual"
