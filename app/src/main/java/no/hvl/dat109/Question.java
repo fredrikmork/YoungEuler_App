@@ -37,11 +37,13 @@ public class Question extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-    }
-    public void OpenCamera (View v) {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(intent, CAMERA_REQUEST);
+        cameraBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent, CAMERA_REQUEST);
+            }
+        });
     }
 
     @Override
