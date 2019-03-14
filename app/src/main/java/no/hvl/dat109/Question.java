@@ -13,22 +13,22 @@ public class Question extends AppCompatActivity {
 
     public static final int CAMERA_REQUEST = 9999;
     ImageView cameraBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
-
-
+        cameraBtn = findViewById(R.id.cameraButton);
         Button menuBtn = findViewById(R.id.menuButton);
-        menuBtn.setOnClickListener(new View.OnClickListener() {
+        Button newQstBtn = findViewById(R.id.newQst);
 
+        menuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Question.this, MainActivity.class));
             }
         });
 
-        Button newQstBtn = findViewById(R.id.newQst);
         newQstBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,18 +38,12 @@ public class Question extends AppCompatActivity {
             }
         });
 
-        cameraBtn = (ImageView) findViewById(R.id.cameraButton);
-        /*cameraBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Question.this, Camera.class));
-            }
-        });*/
     }
-    public void OpenCamera(View v) {
+    public void OpenCamera (View v) {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        //startActivityForResult(intent, CAMERA_REQUEST);
+        startActivityForResult(intent, CAMERA_REQUEST);
     }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode,resultCode, data);
