@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, QuestionClass.class));
+                startActivity(new Intent(MainActivity.this, Question.class));
             }
         });
 
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         helpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Hjelp.class));
+                startActivity(new Intent(MainActivity.this, Help.class));
             }
         });
 

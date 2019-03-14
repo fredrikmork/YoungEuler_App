@@ -12,12 +12,20 @@
         android:id="@+id/hjelpTxt"
         android:layout_width="328dp"
         android:layout_height="515dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="83dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp"
+        android:layout_marginBottom="44dp"
         android:text="@string/hjelpTxt"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         app:fontFamily="casual"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="83dp" />
+        app:layout_constraintBottom_toTopOf="@+id/menyButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/menyButton"
