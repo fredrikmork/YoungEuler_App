@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bakgrunnsbilde">
+    android:background="@drawable/background">
 
     <Button
-        android:id="@+id/nyttSpm"
+        android:id="@+id/newQst"
         style="@android:style/Widget.DeviceDefault.Button.Borderless.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="30dp"
-        android:text="@string/nyttSpm"
+        android:text="@string/newQst"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cameraButton"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +25,7 @@
         app:layout_constraintVertical_bias="0.82" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/menuButton"
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,10 +33,10 @@
         android:layout_marginLeft="100dp"
         android:layout_marginTop="525dp"
         android:layout_marginBottom="30dp"
-        android:text="@string/menyButton"
+        android:text="@string/menuButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/nyttSpm"
+        app:layout_constraintStart_toEndOf="@+id/newQst"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.812" />
 
@@ -50,8 +50,8 @@
         android:layout_marginBottom="54dp"
         android:contentDescription="@string/cameraButton"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintStart_toEndOf="@+id/nyttSpm"
+        app:layout_constraintEnd_toStartOf="@+id/menuButton"
+        app:layout_constraintStart_toEndOf="@+id/newQst"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@android:drawable/ic_menu_camera" />

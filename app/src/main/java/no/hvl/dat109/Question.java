@@ -19,16 +19,17 @@ public class Question extends AppCompatActivity {
         setContentView(R.layout.activity_question);
 
 
-        Button menyBtn = findViewById(R.id.menyButton);
-        menyBtn.setOnClickListener(new View.OnClickListener() {
+        Button menuBtn = findViewById(R.id.menuButton);
+        menuBtn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Question.this, MainActivity.class));
             }
         });
 
-        Button nyttSpmBtn = findViewById(R.id.nyttSpm);
-        nyttSpmBtn.setOnClickListener(new View.OnClickListener() {
+        Button newQstBtn = findViewById(R.id.newQst);
+        newQstBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = getIntent();

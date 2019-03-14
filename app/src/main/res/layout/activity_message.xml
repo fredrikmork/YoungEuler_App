@@ -2,27 +2,26 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bakgrunnsbilde">
+    android:background="@drawable/background">
 
     <Button
-        android:id="@+id/nyttSpm"
+        android:id="@+id/newQst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="666dp"
         android:layout_marginBottom="17dp"
-        android:text="@string/nyttSpm"
+        android:text="@string/newQst"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/menyButton"
+        app:layout_constraintEnd_toStartOf="@+id/menuButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/menyButton"
+        android:id="@+id/menuButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="153dp"
@@ -31,10 +30,10 @@
         android:layout_marginEnd="17dp"
         android:layout_marginRight="17dp"
         android:layout_marginBottom="17dp"
-        android:text="@string/menyButton"
+        android:text="@string/menuButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/nyttSpm"
+        app:layout_constraintStart_toEndOf="@+id/newQst"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -51,7 +50,7 @@
         android:textColor="@android:color/white"
         android:textSize="18sp"
         app:fontFamily="casual"
-        app:layout_constraintBottom_toTopOf="@+id/nyttSpm"
+        app:layout_constraintBottom_toTopOf="@+id/newQst"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

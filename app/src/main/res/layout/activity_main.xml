@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/bakgrunnsbilde">
+    android:background="@drawable/background">
 
     <TextView
         android:id="@+id/logoTxt"
@@ -34,13 +34,13 @@
         android:layout_marginRight="155dp"
         android:layout_marginBottom="35dp"
         android:text="@string/startButton"
-        app:layout_constraintBottom_toTopOf="@+id/hjelpButton"
+        app:layout_constraintBottom_toTopOf="@+id/helpButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoTxt" />
 
     <Button
-        android:id="@+id/hjelpButton"
+        android:id="@+id/helpButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
@@ -49,7 +49,7 @@
         android:layout_marginEnd="163dp"
         android:layout_marginRight="163dp"
         android:layout_marginBottom="292dp"
-        android:text="@string/hjelpButton"
+        android:text="@string/helpButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
