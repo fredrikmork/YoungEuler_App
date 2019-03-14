@@ -22,13 +22,13 @@
         android:textColor="@android:color/white"
         android:textSize="30sp"
         app:fontFamily="casual"
-        app:layout_constraintBottom_toTopOf="@+id/menyButton"
+        app:layout_constraintBottom_toTopOf="@+id/menuButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/menyButton"
+        android:id="@+id/menuButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="289dp"
@@ -37,7 +37,7 @@
         android:layout_marginEnd="34dp"
         android:layout_marginRight="34dp"
         android:layout_marginBottom="41dp"
-        android:text="@string/menyButton"
+        android:text="@string/menuButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +55,7 @@
         android:layout_marginBottom="41dp"
         android:text="@string/startButton"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/menyButton"
+        app:layout_constraintEnd_toStartOf="@+id/menuButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

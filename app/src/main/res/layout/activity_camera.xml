@@ -18,20 +18,20 @@
         android:layout_marginBottom="17dp"
         android:text="@string/nyttSpm"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/menyButton"
+        app:layout_constraintEnd_toStartOf="@+id/menuButton"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/menyButton"
+        android:id="@+id/menuButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="665dp"
         android:layout_marginEnd="17dp"
         android:layout_marginRight="17dp"
         android:layout_marginBottom="18dp"
-        android:text="@string/menyButton"
+        android:text="@string/menuButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/nyttSpm"

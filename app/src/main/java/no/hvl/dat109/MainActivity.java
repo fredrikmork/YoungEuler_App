@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button helpBtn = findViewById(R.id.hjelpButton);
+        Button helpBtn = findViewById(R.id.helpButton);
         helpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
