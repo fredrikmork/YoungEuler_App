@@ -22,7 +22,7 @@ public class Question extends AppCompatActivity {
             }
         });
 
-        Button newQstBtn = findViewById(R.id.nyttSpm);
+        Button newQstBtn = findViewById(R.id.newQst);
         newQstBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

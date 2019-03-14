@@ -13,16 +13,16 @@ public class Message extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
 
-        Button menyBtn = findViewById(R.id.menuButton);
-        menyBtn.setOnClickListener(new View.OnClickListener() {
+        Button menuBtn = findViewById(R.id.menuButton);
+        menuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Message.this, MainActivity.class));
             }
         });
 
-        Button nyttSpmBtn = findViewById(R.id.nyttSpm);
-        nyttSpmBtn.setOnClickListener(new View.OnClickListener() {
+        Button newQstBtn = findViewById(R.id.newQst);
+        newQstBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Message.this, Question.class));
