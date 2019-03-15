@@ -13,16 +13,16 @@ public class Camera extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
 
-        Button menyBtn = findViewById(R.id.menuButton);
-        menyBtn.setOnClickListener(new View.OnClickListener() {
+        Button menuBtn = findViewById(R.id.menuButton);
+        menuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Camera.this, MainActivity.class));
             }
         });
 
-        Button nyttSpmBtn = findViewById(R.id.newQst);
-        nyttSpmBtn.setOnClickListener(new View.OnClickListener() {
+        Button newQstBtn = findViewById(R.id.newQst);
+        newQstBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Camera.this, Question.class));
