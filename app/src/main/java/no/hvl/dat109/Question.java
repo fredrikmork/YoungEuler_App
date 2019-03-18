@@ -44,6 +44,10 @@ public class Question extends AppCompatActivity {
                 startActivityForResult(intent, CAMERA_REQUEST);
             }
         });
+
+        String URL;
+
+
     }
 
     @Override
