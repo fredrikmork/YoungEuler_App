@@ -60,6 +60,6 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
-
+        rq.add(objectRequest);
     }
 }
