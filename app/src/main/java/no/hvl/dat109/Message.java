@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+
+
 public class Message extends AppCompatActivity {
 
     @Override
@@ -28,5 +30,6 @@ public class Message extends AppCompatActivity {
                 startActivity(new Intent(Message.this, Question.class));
             }
         });
+
     }
 }
