@@ -16,7 +16,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,6 +26,8 @@ public class Question extends AppCompatActivity {
     ImageView cameraBtn;
     private TextView mTextViewResult;
     private RequestQueue mQueue;
+    private Button menuBtn;
+    private Button newQstBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +36,13 @@ public class Question extends AppCompatActivity {
 
         cameraBtn = findViewById(R.id.cameraButton);
         mTextViewResult = findViewById(R.id.questionTxt);
-        Button menuBtn = findViewById(R.id.menuButton);
-        Button newQstBtn = findViewById(R.id.newQst);
+        menuBtn = findViewById(R.id.menuButton);
+        newQstBtn = findViewById(R.id.newQst);
+
+        mQueue = Volley.newRequestQueue(this);
+
         jsonParse();
+
         menuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,7 +83,7 @@ public class Question extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         Log.e("Rest response", response.toString());
                         try {
-                            JSONArray jsonArray = response.getJSONArray("employee");
+                            JSONArray jsonArray = response.getJSONArray("Sporsmaal");
 
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject question = jsonArray.getJSONObject(i);
