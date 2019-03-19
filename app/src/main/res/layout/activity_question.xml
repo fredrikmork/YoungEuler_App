@@ -32,19 +32,16 @@
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="200dp"
         android:layout_height="104dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="525dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginTop="359dp"
+        android:layout_marginBottom="45dp"
         android:text="@string/menuButton"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/newQst"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.812" />
+        app:layout_constraintStart_toEndOf="@+id/cameraButton"
+        app:layout_constraintTop_toBottomOf="@+id/questionTxt" />
 
     <ImageView
         android:id="@+id/cameraButton"
@@ -64,6 +61,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_camera" />
+
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
