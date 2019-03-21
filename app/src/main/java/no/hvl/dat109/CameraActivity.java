@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Camera extends AppCompatActivity {
+public class CameraActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +17,7 @@ public class Camera extends AppCompatActivity {
         menuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Camera.this, MainActivity.class));
+                startActivity(new Intent(CameraActivity.this, MainActivity.class));
             }
         });
 
@@ -25,7 +25,7 @@ public class Camera extends AppCompatActivity {
         newQstBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Camera.this, Question.class));
+                startActivity(new Intent(CameraActivity.this, QuestionActivity.class));
             }
         });
     }

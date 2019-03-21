@@ -21,7 +21,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Question extends AppCompatActivity {
+public class QuestionActivity extends AppCompatActivity {
 
     public static final int CAMERA_REQUEST = 9999;
     ImageView cameraBtn;
@@ -49,7 +49,7 @@ public class Question extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Question.this, MainActivity.class));
+                startActivity(new Intent(QuestionActivity.this, MainActivity.class));
             }
         });
 

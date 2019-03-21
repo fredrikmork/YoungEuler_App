@@ -6,27 +6,30 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Help extends AppCompatActivity {
+
+
+public class MessageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_help);
+        setContentView(R.layout.activity_message);
 
         Button menuBtn = findViewById(R.id.menuButton);
         menuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Help.this, MainActivity.class));
+                startActivity(new Intent(MessageActivity.this, MainActivity.class));
             }
         });
 
-        Button newQstBtn = findViewById(R.id.startButton);
+        Button newQstBtn = findViewById(R.id.newQst);
         newQstBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Help.this, Question.class));
+                startActivity(new Intent(MessageActivity.this, QuestionActivity.class));
             }
         });
+
     }
 }

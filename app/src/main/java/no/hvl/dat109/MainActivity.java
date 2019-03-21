@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Question.class));
+                startActivity(new Intent(MainActivity.this, QuestionActivity.class));
             }
         });
 
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Help.class));
+                startActivity(new Intent(MainActivity.this, HelpActivity.class));
             }
         });
 
