@@ -28,34 +28,38 @@ public class Question extends AppCompatActivity {
     private TextView mTextViewResult;
     private RequestQueue mQueue;
 
-    private Button menuBtn;
-    private Button newQstBtn;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
 
-        cameraBtn = findViewById(R.id.cameraButton);
         mTextViewResult = findViewById(R.id.questionTxt);
-
-        menuBtn = findViewById(R.id.menuButton);
-        newQstBtn = findViewById(R.id.newQst);
 
         mQueue = Volley.newRequestQueue(this);
 
         jsonParse();
 
-
+        // Oppretter en knapp og lager OnClickListner
+        Button menuBtn = findViewById(R.id.menuButton);
         menuBtn.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Åpner en ny side når knappen trykkes
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Question.this, MainActivity.class));
             }
         });
 
+        // Oppretter en knapp og lager en OnClickListner
+        Button newQstBtn = findViewById(R.id.newQst);
         newQstBtn.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Åpner en ny side når knappen trykkes
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Intent intent = getIntent();
@@ -65,7 +69,13 @@ public class Question extends AppCompatActivity {
             }
         });
 
+        // Oppretter en knapp og lager en OnClickListner
+        cameraBtn = findViewById(R.id.cameraButton);
         cameraBtn.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Åpner telefonens innebygde kamera-app når kanppen trykkes
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -75,6 +85,7 @@ public class Question extends AppCompatActivity {
 
 
     }
+
     public void jsonParse(){
         String url = "";
         mQueue = Volley.newRequestQueue(this);
@@ -118,6 +129,12 @@ public class Question extends AppCompatActivity {
         mQueue.add(objectRequest);
     }
 
+    /**
+     * Mottar bildet fra kameraet
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode,resultCode, data);

@@ -13,16 +13,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Oppretter en knapp og lager en OnClickListner
         Button startBtn = findViewById(R.id.startButton);
         startBtn.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Åpner en ny side når knappen trykkes
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, Question.class));
             }
         });
 
+        // Oppretter en knapp og lager en OnClickListner
         Button helpBtn = findViewById(R.id.helpButton);
         helpBtn.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Åpner en ny side når knappen trykkes
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, Help.class));
