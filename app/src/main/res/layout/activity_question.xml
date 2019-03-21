@@ -7,52 +7,27 @@
     android:background="@drawable/bakgrunn1">
 
     <Button
-        android:id="@+id/newQst"
-        style="@android:style/Widget.DeviceDefault.Button.Borderless.Small"
-        android:layout_width="187dp"
-        android:layout_height="107dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="525dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="30dp"
-        android:text="@string/newQst"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/cameraButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.82" />
-
-    <Button
         android:id="@+id/menuButton"
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="200dp"
         android:layout_height="104dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="525dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="356dp"
         android:text="@string/menuButton"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/newQst"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.812" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/cameraButton" />
 
     <ImageView
         android:id="@+id/cameraButton"
-        android:layout_width="66dp"
-        android:layout_height="70dp"
+        android:layout_width="133dp"
+        android:layout_height="82dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="629dp"
+        android:layout_marginTop="600dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="54dp"
@@ -60,10 +35,11 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_camera" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icon" />
+
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
@@ -87,4 +63,47 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton13"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="69dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="600dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="20dp"
+        android:adjustViewBounds="false"
+        android:background="0"
+        android:contentDescription="@string/newQst"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cameraButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/newQ" />
+
+    <ImageButton
+        android:id="@+id/imageButton15"
+        android:layout_width="55dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="261dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginRight="47dp"
+        android:layout_marginBottom="37dp"
+        android:background="000000"
+        android:contentDescription="@string/menuButton"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cameraButton"
+        app:layout_constraintTop_toBottomOf="@+id/menuButton"
+        app:srcCompat="@drawable/house" />
+
 </android.support.constraint.ConstraintLayout>
