@@ -30,6 +30,9 @@ public class ButtonTest {
     @Rule
     public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);
 
+    /**
+     * Tester at appens knapper fungerer som de skal og at innholdet som er forventet, er der. Denne testen foregår når man åpner appen.
+     */
     @Test
     public void buttonTest() {
         ViewInteraction appCompatButton = onView(
