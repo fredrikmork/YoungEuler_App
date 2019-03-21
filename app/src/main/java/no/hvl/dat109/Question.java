@@ -40,10 +40,6 @@ public class Question extends AppCompatActivity {
         cameraBtn = findViewById(R.id.cameraButton);
         mTextViewResult = findViewById(R.id.questionTxt);
 
-        Button menuBtn = findViewById(R.id.menuButton);
-        Button newQstBtn = findViewById(R.id.newQst);
-        jsonParse();
-
         menuBtn = findViewById(R.id.menuButton);
         newQstBtn = findViewById(R.id.newQst);
 
