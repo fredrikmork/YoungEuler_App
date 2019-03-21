@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class HelpActivity extends AppCompatActivity {
 
@@ -13,7 +14,7 @@ public class HelpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
 
-        Button menuBtn = findViewById(R.id.menuButton);
+        ImageView menuBtn = findViewById(R.id.menuButton);
         menuBtn.setOnClickListener(new View.OnClickListener() {
             /**
              * Legger til en knapp nederst til høyre hvor den går tilbake til startsiden, eller menyen.

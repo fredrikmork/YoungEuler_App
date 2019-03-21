@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class CameraActivity extends AppCompatActivity {
 
@@ -13,7 +14,7 @@ public class CameraActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
 
-        Button menuBtn = findViewById(R.id.menuButton);
+        ImageView menuBtn = findViewById(R.id.menuButton);
         menuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -21,7 +22,7 @@ public class CameraActivity extends AppCompatActivity {
             }
         });
 
-        Button newQstBtn = findViewById(R.id.newQst);
+        ImageView newQstBtn = findViewById(R.id.newQst);
         newQstBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

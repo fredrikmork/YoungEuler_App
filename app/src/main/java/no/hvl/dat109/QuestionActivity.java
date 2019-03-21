@@ -45,7 +45,7 @@ public class QuestionActivity extends AppCompatActivity {
         jsonParse();
 
         // Oppretter en knapp og lager OnClickListner
-        Button menuBtn = findViewById(R.id.menuButton);
+        ImageView menuBtn = findViewById(R.id.menuButton);
         menuBtn.setOnClickListener(new View.OnClickListener() {
             /**
              * Åpner en ny side når knappen trykkes
@@ -58,7 +58,7 @@ public class QuestionActivity extends AppCompatActivity {
         });
 
         // Oppretter en knapp og lager en OnClickListner
-        Button newQstBtn = findViewById(R.id.newQst);
+        ImageView newQstBtn = findViewById(R.id.newQst);
         newQstBtn.setOnClickListener(new View.OnClickListener() {
             /**
              * Åpner en ny side når knappen trykkes
