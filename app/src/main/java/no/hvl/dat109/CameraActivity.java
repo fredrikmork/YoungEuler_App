@@ -6,20 +6,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-
-
-public class Message extends AppCompatActivity {
+public class CameraActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_message);
+        setContentView(R.layout.activity_camera);
 
         Button menuBtn = findViewById(R.id.menuButton);
         menuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Message.this, MainActivity.class));
+                startActivity(new Intent(CameraActivity.this, MainActivity.class));
             }
         });
 
@@ -27,9 +25,8 @@ public class Message extends AppCompatActivity {
         newQstBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Message.this, Question.class));
+                startActivity(new Intent(CameraActivity.this, QuestionActivity.class));
             }
         });
-
     }
 }
