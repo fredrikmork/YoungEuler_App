@@ -15,6 +15,10 @@ public class HelpActivity extends AppCompatActivity {
 
         Button menuBtn = findViewById(R.id.menuButton);
         menuBtn.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Legger til en knapp nederst til høyre hvor den går tilbake til startsiden, eller menyen.
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HelpActivity.this, MainActivity.class));
@@ -23,6 +27,10 @@ public class HelpActivity extends AppCompatActivity {
 
         Button newQstBtn = findViewById(R.id.startButton);
         newQstBtn.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Legger til en knapp nederst til venstre der den går til et spørsmål.
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HelpActivity.this, QuestionActivity.class));
