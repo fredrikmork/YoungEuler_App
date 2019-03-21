@@ -21,18 +21,22 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class QuestionActivity extends AppCompatActivity {
 
     public static final int CAMERA_REQUEST = 9999;
     ImageView cameraBtn;
     private TextView mTextViewResult;
     private RequestQueue mQueue;
+    private ArrayList<Question> spmSamling;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+        spmSamling = new ArrayList<>();
 
         mTextViewResult = findViewById(R.id.questionTxt);
 
@@ -106,12 +110,7 @@ public class QuestionActivity extends AppCompatActivity {
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject question = jsonArray.getJSONObject(i);
 
-                                int id = question.getInt("id");
-                                int niva = question.getInt("niva");
-                                String spm = question.getString("spm");
-                                String svar = question.getString("svar");
-
-                                mTextViewResult.append(spm);
+                                spmSamling.add(new Question(question.getString("svar"), question.getString("spm"), question.getInt("niva"), question.getInt("id")));
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
