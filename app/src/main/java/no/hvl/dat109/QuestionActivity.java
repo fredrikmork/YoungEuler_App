@@ -21,16 +21,19 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class QuestionActivity extends AppCompatActivity {
 
     public static final int CAMERA_REQUEST = 9999;
-    ImageView cameraBtn;
+    private ImageView cameraBtn;
     private TextView mTextViewResult;
     private RequestQueue mQueue;
     private ArrayList<Question> spmSamling;
-
+    private Button uploadBtn;
+    private Bitmap bitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +90,9 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
+        //Laste opp knapp
+        uploadBtn = (Button)findViewById(R.id.uploadBtn);
+        //uploadBtn.setOnClickListener();
 
     }
 
@@ -141,10 +147,25 @@ public class QuestionActivity extends AppCompatActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode,resultCode, data);
+        String url = "http://10.0.0.2:5000/";
         if(requestCode == CAMERA_REQUEST){
-            Bitmap bitmap = (Bitmap) (data.getExtras().get("data"));
-            cameraBtn.setImageBitmap(bitmap);
-        }
+            try {
+                bitmap = (Bitmap) (data.getExtras().get("data"));
+                //bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
+                cameraBtn.setImageBitmap(bitmap);
+                uploadBtn.setVisibility(View.VISIBLE);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
+        }
+    }
+
+    public void uploadImage() {
+
+    }
+
+    public String imageToString(Bitmap bitmap){
+    return "";
     }
 }

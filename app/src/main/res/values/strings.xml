@@ -11,4 +11,5 @@
     <string name="tilbakeTxt">Ditt spørsmål var: 2 x 2</string>
     <string name="logoBackup">logo</string>
     <bool name="riktigGalt">false</bool>
+    <string name="uploadBtn">Last opp bildet</string>
 </resources>
