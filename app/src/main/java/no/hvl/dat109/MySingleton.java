@@ -31,12 +31,12 @@ public class MySingleton {
 
     private RequestQueue getRequestQueue(){
         if(requestQueue ==null){
-            requestQueue = Volley.newRequestQueue(mCtx.getApplicationContext())
+            requestQueue = Volley.newRequestQueue(mCtx.getApplicationContext());
         }
         return requestQueue;
     }
 
-    public <T> void main(Request<T> request){
+    public <T> void addToRequestQueue (Request<T> request){
         getRequestQueue().add(request);
     }
 }

@@ -171,6 +171,7 @@ public class QuestionActivity extends AppCompatActivity {
                 bitmap = (Bitmap) (data.getExtras().get("data"));
                 //bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
                 imageView.setImageBitmap(bitmap);
+                imageView.setVisibility(View.VISIBLE);
                 uploadBtn.setVisibility(View.VISIBLE);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -186,11 +187,10 @@ public class QuestionActivity extends AppCompatActivity {
             public void onResponse(String response){
                 try {
                     JSONObject jsonObject = new JSONObject(response);
-                    String Response = jsonObject.getString("response");
-                    Toast.makeText(MainActivity.this,Toast.LENGTH_LONG).show();
+                    String response1 = jsonObject.getString("response");
+                    Toast.makeText(QuestionActivity.this,response1, Toast.LENGTH_LONG).show();
                     imageView.setImageResource(0);
                     imageView.setVisibility(View.GONE);
-
                 } catch (JSONException je){
                     je.printStackTrace();
                 }
@@ -209,7 +209,7 @@ public class QuestionActivity extends AppCompatActivity {
                 return params;
             }
         };
-
+        MySingleton.getInstance(QuestionActivity.this).addToRequestQueue(stringRequest);
     }
 
     /**
