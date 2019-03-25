@@ -17,6 +17,10 @@ public class MessageActivity extends AppCompatActivity {
 
         ImageView menuBtn = findViewById(R.id.menuButton);
         menuBtn.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Legger til en knapp nederst til høyre hvor den går tilbake til startsiden, eller menyen.
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MessageActivity.this, MainActivity.class));
@@ -25,6 +29,10 @@ public class MessageActivity extends AppCompatActivity {
 
         ImageView newQstBtn = findViewById(R.id.newQst);
         newQstBtn.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Legger til en knapp nederst til venstre der den går til et spørsmål.
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MessageActivity.this, QuestionActivity.class));

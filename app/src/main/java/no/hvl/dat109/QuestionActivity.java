@@ -90,6 +90,10 @@ public class QuestionActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Bruker url'en til serveren for å laste ned alle objektene og tar vare på det ved hjelp av klassen: "Question".
+     * Vi bruker dette til å laste ned spørsmål til appen og oppdatere textviewet for hver oppdatering.
+     */
     public void jsonParse(){
         String url = "";
         mQueue = Volley.newRequestQueue(this);
