@@ -6,7 +6,7 @@
     <string name="newQst">Nytt Spørsmål</string>
     <string name="menuButton">Meny</string>
     <string name="cameraButton">Kamera</string>
-    <string name="helpTxt">Når man starter quizen dukker det opp et spørsmål du skal løse ved å plassere klossene riktig i forhold til hverandre. <br>Regler:</br> </string>
+    <string name="helpTxt">Når man starter quizen dukker det opp et spørsmål du skal løse. \n\nRegler:\n1. Sett sammen stavene ved siden av hverandre (addering). \n 2. Hvis man har gjort riktig, får man opp tilbakemelding på oppgaven.\n\n-Lykke til!</string>
     <string name="questionTxt">2 x 2 = ?</string>
     <string name="tilbakeTxt">Ditt spørsmål var: 2 x 2</string>
     <string name="logoBackup">logo</string>
