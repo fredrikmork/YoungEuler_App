@@ -21,6 +21,7 @@ public class MySingleton {
     }
     /**
      * Create a static method to get instance.
+     * @see MySingleton()
      */
     public static synchronized MySingleton getInstance(Context context){
         if(mInstance == null){
@@ -29,6 +30,10 @@ public class MySingleton {
         return mInstance;
     }
 
+    /**
+     *
+     * @return RequestQueue
+     */
     private RequestQueue getRequestQueue(){
         if(requestQueue ==null){
             requestQueue = Volley.newRequestQueue(mCtx.getApplicationContext());
@@ -36,6 +41,11 @@ public class MySingleton {
         return requestQueue;
     }
 
+    /**
+     *
+     * @param request
+     * @param <T>
+     */
     public <T> void addToRequestQueue (Request<T> request){
         getRequestQueue().add(request);
     }

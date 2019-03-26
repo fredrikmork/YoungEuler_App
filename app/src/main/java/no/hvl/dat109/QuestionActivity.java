@@ -26,15 +26,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.StringReader;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.jar.Attributes;
 
 public class QuestionActivity extends AppCompatActivity {
 
@@ -180,6 +175,10 @@ public class QuestionActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Laster opp bildet til serveren
+     * @see String imageToString()
+     */
     public void uploadImage() {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, uploadUrl,
         new Response.Listener<String>(){
