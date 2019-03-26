@@ -6,24 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/background1">
 
-    <ImageView
-        android:id="@+id/cameraButton"
-        android:layout_width="133dp"
-        android:layout_height="82dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="600dp"
-        android:layout_marginBottom="20dp"
-        android:contentDescription="@string/cameraButton"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_baseline_camera_alt_24px" />
-
-
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
@@ -48,16 +30,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/cameraButton"
+        android:layout_width="69dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="600dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="@string/cameraButton"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_camera_alt_24px" />
+
     <ImageButton
         android:id="@+id/newQst"
         style="@style/Widget.AppCompat.ImageButton"
         android:layout_width="69dp"
         android:layout_height="64dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
+        android:layout_marginTop="600dp"
         android:layout_marginBottom="20dp"
         android:adjustViewBounds="false"
         android:background="#00000000"
@@ -65,32 +57,24 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cameraButton"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.946"
         app:srcCompat="@drawable/ic_baseline_refresh_24px" />
 
     <ImageButton
         android:id="@+id/menuButton"
-        android:layout_width="55dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginLeft="37dp"
-        android:layout_marginTop="613dp"
-        android:layout_marginEnd="47dp"
-        android:layout_marginRight="47dp"
+        android:layout_width="69dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="600dp"
 
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="20dp"
         android:background="#00000000"
         android:contentDescription="@string/menuButton"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/cameraButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_baseline_home_24px" />
 
     <Button
