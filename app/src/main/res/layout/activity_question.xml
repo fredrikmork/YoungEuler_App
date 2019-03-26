@@ -13,9 +13,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="600dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="54dp"
+        android:layout_marginBottom="20dp"
         android:contentDescription="@string/cameraButton"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,7 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/icon" />
+        app:srcCompat="@drawable/ic_baseline_camera_alt_24px" />
 
 
 
@@ -36,7 +34,7 @@
 
     <TextView
         android:id="@+id/questionTxt"
-        android:layout_width="wrap_content"
+        android:layout_width="136dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="192dp"
         android:layout_marginBottom="418dp"
@@ -71,7 +69,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.946"
-        app:srcCompat="@drawable/newq" />
+        app:srcCompat="@drawable/ic_baseline_refresh_24px" />
 
     <ImageButton
         android:id="@+id/menuButton"
@@ -83,7 +81,7 @@
         android:layout_marginEnd="47dp"
         android:layout_marginRight="47dp"
 
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="8dp"
         android:background="#00000000"
         android:contentDescription="@string/menuButton"
         android:scaleType="fitCenter"
@@ -92,7 +90,8 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/cameraButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/house" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_baseline_home_24px" />
 
     <Button
         android:id="@+id/uploadBtn"
