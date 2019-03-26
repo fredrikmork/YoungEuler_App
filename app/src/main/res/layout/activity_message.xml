@@ -40,7 +40,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/newQst"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_home_24px" />
+        app:srcCompat="@drawable/ic_homelogony" />
 
     <ImageView
         android:id="@+id/newQst"
@@ -58,6 +58,6 @@
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_refresh_24px" />
+        app:srcCompat="@drawable/ic_refreshlogony" />
 
 </android.support.constraint.ConstraintLayout>

@@ -12,4 +12,5 @@
     <string name="logoBackup">logo</string>
     <bool name="riktigGalt">false</bool>
     <string name="uploadBtn">Last opp bildet</string>
+    <string name="uploadTxt">Sjekk svar!</string>
 </resources>

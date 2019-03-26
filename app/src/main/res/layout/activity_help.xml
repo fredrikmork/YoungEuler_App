@@ -38,7 +38,7 @@
         android:layout_marginBottom="41dp"
         android:background="@null"
         android:text="@string/startButton"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,5 +60,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_home_24px" />
+        app:srcCompat="@drawable/ic_homelogony" />
 </android.support.constraint.ConstraintLayout>

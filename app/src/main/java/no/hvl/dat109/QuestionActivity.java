@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,7 +17,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -34,12 +33,10 @@ import java.util.Map;
 public class QuestionActivity extends AppCompatActivity {
 
     public static final int CAMERA_REQUEST = 9999;
-    private ImageView cameraBtn;
-    private ImageView imageView;
-    private TextView mTextViewResult;
+    private ImageView cameraBtn, imageView,menuBtn, newQstBtn, uploadBtn;
+    private TextView mTextViewResult, uploadTxt;
     private RequestQueue mQueue;
-    private ArrayList<Question> spmSamling;
-    private Button uploadBtn;
+    private ArrayList<Question> spmSamling = new ArrayList<>();
     private Bitmap bitmap;
     private String uploadUrl = "http://10.0.0.2:5000/";
 
@@ -47,16 +44,35 @@ public class QuestionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
-        spmSamling = new ArrayList<>();
 
-        mTextViewResult = findViewById(R.id.questionTxt);
+        //gir variablene verdien til id'ene og setter på en clicklistener på de
+        initControl();
 
+        //Henter spørsmålet
         mQueue = Volley.newRequestQueue(this);
-
         jsonParse();
 
-        // Oppretter en knapp og lager OnClickListner
-        ImageView menuBtn = findViewById(R.id.menuButton);
+        public void onClick(View v){
+            switch (v.getId()){
+                case menuBtn:
+                    this.startActivity(new Intent(QuestionActivity.this, MainActivity.class));
+                    break;
+                case cameraBtn:
+                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(intent, CAMERA_REQUEST);
+                    break;
+                case newQstBtn:
+                    Intent intent = getIntent();
+                    finish();
+                    startActivity(intent);
+                    jsonParse();
+                    break;
+                case uploadBtn:
+                    uploadImage();
+                    break;
+            }
+        }
+
         menuBtn.setOnClickListener(new View.OnClickListener() {
             /**
              * Åpner en ny side når knappen trykkes
@@ -68,8 +84,6 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
-        // Oppretter en knapp og lager en OnClickListner
-        ImageView newQstBtn = findViewById(R.id.newQst);
         newQstBtn.setOnClickListener(new View.OnClickListener() {
             /**
              * Åpner en ny side når knappen trykkes
@@ -84,8 +98,6 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
-        // Oppretter en knapp og lager en OnClickListner
-        cameraBtn = findViewById(R.id.cameraButton);
         cameraBtn.setOnClickListener(new View.OnClickListener() {
             /**
              * Åpner telefonens innebygde kamera-app når kanppen trykkes
@@ -98,8 +110,6 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
-        //Laste opp knapp
-        uploadBtn = (Button)findViewById(R.id.uploadBtn);
         uploadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,29 +119,42 @@ public class QuestionActivity extends AppCompatActivity {
 
     }
 
+    private void initControl() {
+        mTextViewResult = findViewById(R.id.questionTxt);
+        uploadTxt = findViewById(R.id.uploadTxt);
+        menuBtn = findViewById(R.id.menuButton);
+        newQstBtn = findViewById(R.id.newQst);
+        cameraBtn = findViewById(R.id.cameraButton);
+        uploadBtn = findViewById(R.id.uploadBtn);
+        menuBtn.setOnClickListener(this);
+        cameraBtn.setOnClickListener(this);
+        newQstBtn.setOnClickListener(this);
+        uploadBtn.setOnClickListener(this);
+    }
+
     /**
      * Bruker url'en til serveren for å laste ned alle objektene og tar vare på det ved hjelp av klassen: "Question".
      * Vi bruker dette til å laste ned spørsmål til appen og oppdatere textviewet for hver oppdatering.
      */
     public void jsonParse(){
-        String url = "";
+        String url = "http://data1.hib.no:9090/YE/spm";
         mQueue = Volley.newRequestQueue(this);
 
-        JsonObjectRequest objectRequest = new JsonObjectRequest(
+        JsonArrayRequest objectRequest = new JsonArrayRequest(
                 Request.Method.GET,
                 url,
                 null,
-                new Response.Listener<JSONObject>() {
+                new Response.Listener<JSONArray>() {
                     @Override
-                    public void onResponse(JSONObject response) {
+                    public void onResponse(JSONArray response) {
                         Log.e("Rest response", response.toString());
                         try {
 
-                            JSONArray jsonArray = response.getJSONArray("Sporsmaal");
+                            //JSONArray jsonArray = response.getJSONArray("");
 
 
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject question = jsonArray.getJSONObject(i);
+                            for (int i = 0; i < response.length(); i++) {
+                                JSONObject question = response.getJSONObject(i);
 
                                 spmSamling.add(new Question(question.getString("svar"), question.getString("spm"), question.getInt("niva"), question.getInt("id")));
                             }
@@ -168,6 +191,7 @@ public class QuestionActivity extends AppCompatActivity {
                 imageView.setImageBitmap(bitmap);
                 imageView.setVisibility(View.VISIBLE);
                 uploadBtn.setVisibility(View.VISIBLE);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
