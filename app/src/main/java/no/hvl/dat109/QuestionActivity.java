@@ -33,7 +33,7 @@ import java.util.Map;
 public class QuestionActivity extends AppCompatActivity {
 
     public static final int CAMERA_REQUEST = 9999;
-    private ImageView cameraBtn, imageView,menuBtn, newQstBtn, uploadBtn;
+    private ImageView cameraBtn, imageView, menuBtn, newQstBtn, uploadBtn;
     private TextView mTextViewResult, uploadTxt;
     private RequestQueue mQueue;
     private ArrayList<Question> spmSamling = new ArrayList<>();
@@ -51,27 +51,6 @@ public class QuestionActivity extends AppCompatActivity {
         //Henter spørsmålet
         mQueue = Volley.newRequestQueue(this);
         jsonParse();
-
-        public void onClick(View v){
-            switch (v.getId()){
-                case menuBtn:
-                    this.startActivity(new Intent(QuestionActivity.this, MainActivity.class));
-                    break;
-                case cameraBtn:
-                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                    startActivityForResult(intent, CAMERA_REQUEST);
-                    break;
-                case newQstBtn:
-                    Intent intent = getIntent();
-                    finish();
-                    startActivity(intent);
-                    jsonParse();
-                    break;
-                case uploadBtn:
-                    uploadImage();
-                    break;
-            }
-        }
 
         menuBtn.setOnClickListener(new View.OnClickListener() {
             /**
@@ -119,6 +98,9 @@ public class QuestionActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Definerer variablene til knappeID'ene og setter på en clickListener på de
+     */
     private void initControl() {
         mTextViewResult = findViewById(R.id.questionTxt);
         uploadTxt = findViewById(R.id.uploadTxt);
@@ -126,17 +108,43 @@ public class QuestionActivity extends AppCompatActivity {
         newQstBtn = findViewById(R.id.newQst);
         cameraBtn = findViewById(R.id.cameraButton);
         uploadBtn = findViewById(R.id.uploadBtn);
-        menuBtn.setOnClickListener(this);
-        cameraBtn.setOnClickListener(this);
-        newQstBtn.setOnClickListener(this);
-        uploadBtn.setOnClickListener(this);
+        menuBtn.setOnClickListener((View.OnClickListener)this);
+        cameraBtn.setOnClickListener((View.OnClickListener)this);
+        newQstBtn.setOnClickListener((View.OnClickListener)this);
+        uploadBtn.setOnClickListener((View.OnClickListener)this);
+    }
+
+    /**
+     * switch på hvilke knapper som blir trykket på.
+     * @param v
+     */
+    //@Override
+    public void onClick (View v){
+        switch (v.getId()) {
+            case R.id.menuButton:
+                startActivity(new Intent(QuestionActivity.this, MainActivity.class));
+                break;
+            case R.id.cameraButton:
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent, CAMERA_REQUEST);
+                break;
+            case R.id.newQst:
+                Intent intent1 = getIntent();
+                finish();
+                startActivity(intent1);
+                jsonParse();
+                break;
+            case R.id.uploadBtn:
+                uploadImage();
+                break;
+        }
     }
 
     /**
      * Bruker url'en til serveren for å laste ned alle objektene og tar vare på det ved hjelp av klassen: "Question".
      * Vi bruker dette til å laste ned spørsmål til appen og oppdatere textviewet for hver oppdatering.
      */
-    public void jsonParse(){
+    public void jsonParse() {
         String url = "http://data1.hib.no:9090/YE/spm";
         mQueue = Volley.newRequestQueue(this);
 
@@ -176,15 +184,16 @@ public class QuestionActivity extends AppCompatActivity {
 
     /**
      * Mottar bildet fra kameraet
+     *
      * @param requestCode
      * @param resultCode
      * @param data
      */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode,resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == CAMERA_REQUEST){
+        if (requestCode == CAMERA_REQUEST) {
             try {
                 bitmap = (Bitmap) (data.getExtras().get("data"));
                 //bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
@@ -201,34 +210,35 @@ public class QuestionActivity extends AppCompatActivity {
 
     /**
      * Laster opp bildet til serveren
+     *
      * @see String imageToString()
      */
     public void uploadImage() {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, uploadUrl,
-        new Response.Listener<String>(){
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String response1 = jsonObject.getString("response");
+                            Toast.makeText(QuestionActivity.this, response1, Toast.LENGTH_LONG).show();
+                            imageView.setImageResource(0);
+                            imageView.setVisibility(View.GONE);
+                        } catch (JSONException je) {
+                            je.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
             @Override
-            public void onResponse(String response){
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    String response1 = jsonObject.getString("response");
-                    Toast.makeText(QuestionActivity.this,response1, Toast.LENGTH_LONG).show();
-                    imageView.setImageResource(0);
-                    imageView.setVisibility(View.GONE);
-                } catch (JSONException je){
-                    je.printStackTrace();
-                }
+            public void onErrorResponse(VolleyError error) {
 
             }
-        }, new Response.ErrorListener(){
-            @Override
-            public void onErrorResponse(VolleyError error){
-
-            }
-        }){
+        }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("image",imageToString(bitmap));
+                params.put("image", imageToString(bitmap));
                 return params;
             }
         };
@@ -237,13 +247,14 @@ public class QuestionActivity extends AppCompatActivity {
 
     /**
      * Gjør om bildet til en streng som skal brukes når det lastes opp til nettet.
+     *
      * @param bitmap
      * @return
      */
-    public String imageToString(Bitmap bitmap){
+    public String imageToString(Bitmap bitmap) {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG,100, byteArrayOutputStream);
-        byte [] imgBytes = byteArrayOutputStream.toByteArray();
-        return Base64.encodeToString(imgBytes,Base64.DEFAULT);
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+        byte[] imgBytes = byteArrayOutputStream.toByteArray();
+        return Base64.encodeToString(imgBytes, Base64.DEFAULT);
     }
 }
