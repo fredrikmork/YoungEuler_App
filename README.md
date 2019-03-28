@@ -1,5 +1,5 @@
 # YoungEuler_App
-App-delen i prosjektet. En matte-app som skal gjenkjenne Cruisenair-staver, 
+App-delen i prosjektet 📱 En matte-app som skal gjenkjenne Cruisenair-staver, 
 finne ut om man adderer eller multipliserer disse med hverandre og få et resultat tilbake. 
 Her skal man få opp et spørsmål før man tar bilde og matche bildet med spørsmålet. 
 Man skal få en tilbakemelding om man greide spørsmålet og eventuelt få et nytt spørsmål. 
