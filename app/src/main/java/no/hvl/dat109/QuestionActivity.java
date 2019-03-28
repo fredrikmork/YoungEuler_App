@@ -207,8 +207,8 @@ public class QuestionActivity extends AppCompatActivity {
             try {
                 bitmap = (Bitmap) (data.getExtras().get("data"));
                 //bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
-                imageView.setImageBitmap(bitmap);
-                imageView.setVisibility(View.VISIBLE);
+                //imageView.setImageBitmap(bitmap);
+                //imageView.setVisibility(View.VISIBLE);
                 uploadBtn.setVisibility(View.VISIBLE);
 
             } catch (Exception e) {
@@ -232,8 +232,8 @@ public class QuestionActivity extends AppCompatActivity {
                             JSONObject jsonObject = new JSONObject(response);
                             String response1 = jsonObject.getString("response");
                             Toast.makeText(QuestionActivity.this, response1, Toast.LENGTH_LONG).show();
-                            imageView.setImageResource(0);
-                            imageView.setVisibility(View.GONE);
+                            //imageView.setImageResource(0);
+                            //imageView.setVisibility(View.GONE);
                         } catch (JSONException je) {
                             je.printStackTrace();
                         }
