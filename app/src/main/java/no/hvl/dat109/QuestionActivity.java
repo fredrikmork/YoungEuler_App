@@ -29,6 +29,7 @@ import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class QuestionActivity extends AppCompatActivity {
 
@@ -36,14 +37,17 @@ public class QuestionActivity extends AppCompatActivity {
     private ImageView cameraBtn, imageView, menuBtn, newQstBtn, uploadBtn;
     private TextView mTextViewResult, uploadTxt;
     private RequestQueue mQueue;
-    private ArrayList<Question> spmSamling = new ArrayList<>();
+    private ArrayList<Question> spmSamling;
     private Bitmap bitmap;
     private String uploadUrl = "http://10.0.0.2:5000/";
+    private Random random;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+        spmSamling = new ArrayList<>();
+        random = new Random();
 
         //gir variablene verdien til id'ene og setter på en clicklistener på de
         initControl();
@@ -51,6 +55,8 @@ public class QuestionActivity extends AppCompatActivity {
         //Henter spørsmålet
         mQueue = Volley.newRequestQueue(this);
         jsonParse();
+
+
 
         menuBtn.setOnClickListener(new View.OnClickListener() {
             /**
@@ -164,8 +170,12 @@ public class QuestionActivity extends AppCompatActivity {
                             for (int i = 0; i < response.length(); i++) {
                                 JSONObject question = response.getJSONObject(i);
 
-                                spmSamling.add(new Question(question.getString("svar"), question.getString("spm"), question.getInt("niva"), question.getInt("id")));
+                                spmSamling.add(new Question(question.getString("spm"),
+                                        question.getString("svar"), question.getInt("niva"),
+                                        question.getInt("id")));
+
                             }
+                            mTextViewResult.setText(spmSamling.get(random.nextInt(spmSamling.size())).getSpm());
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
