@@ -108,10 +108,10 @@ public class QuestionActivity extends AppCompatActivity {
         newQstBtn = findViewById(R.id.newQst);
         cameraBtn = findViewById(R.id.cameraButton);
         uploadBtn = findViewById(R.id.uploadBtn);
-        menuBtn.setOnClickListener((View.OnClickListener)this);
-        cameraBtn.setOnClickListener((View.OnClickListener)this);
-        newQstBtn.setOnClickListener((View.OnClickListener)this);
-        uploadBtn.setOnClickListener((View.OnClickListener)this);
+//        menuBtn.setOnClickListener((View.OnClickListener)this);
+//        cameraBtn.setOnClickListener((View.OnClickListener)this);
+//        newQstBtn.setOnClickListener((View.OnClickListener)this);
+//        uploadBtn.setOnClickListener((View.OnClickListener)this);
     }
 
     /**
@@ -119,26 +119,26 @@ public class QuestionActivity extends AppCompatActivity {
      * @param v
      */
     //@Override
-    public void onClick (View v){
-        switch (v.getId()) {
-            case R.id.menuButton:
-                startActivity(new Intent(QuestionActivity.this, MainActivity.class));
-                break;
-            case R.id.cameraButton:
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent, CAMERA_REQUEST);
-                break;
-            case R.id.newQst:
-                Intent intent1 = getIntent();
-                finish();
-                startActivity(intent1);
-                jsonParse();
-                break;
-            case R.id.uploadBtn:
-                uploadImage();
-                break;
-        }
-    }
+//    public void onClick (View v){
+//        switch (v.getId()) {
+//            case R.id.menuButton:
+//                startActivity(new Intent(QuestionActivity.this, MainActivity.class));
+//                break;
+//            case R.id.cameraButton:
+//                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//                startActivityForResult(intent, CAMERA_REQUEST);
+//                break;
+//            case R.id.newQst:
+//                Intent intent1 = getIntent();
+//                finish();
+//                startActivity(intent1);
+//                jsonParse();
+//                break;
+//            case R.id.uploadBtn:
+//                uploadImage();
+//                break;
+//        }
+//    }
 
     /**
      * Bruker url'en til serveren for å laste ned alle objektene og tar vare på det ved hjelp av klassen: "Question".
