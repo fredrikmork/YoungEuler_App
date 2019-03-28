@@ -79,7 +79,7 @@ public class QuestionActivity extends AppCompatActivity {
                 Intent intent = getIntent();
                 finish();
                 startActivity(intent);
-                jsonParse();
+                //jsonParse();
             }
         });
 
